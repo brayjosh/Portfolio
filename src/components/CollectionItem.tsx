@@ -29,22 +29,15 @@ export function CollectionItem({ label, year, onMouseEnter, onMouseLeave }: Prop
 
   return (
     <div className="collectionItem" role="listitem">
-      <div
-        className="videoPreviewWrapper container"
-        style={{ display: 'flex', opacity: isHovered ? 1 : 0, transition: 'opacity 0.2s ease' }}
-      >
+      <div className="videoPreviewWrapper container" style={{ display: 'flex', opacity: isHovered ? 1 : 0, transition: 'opacity 0.2s ease' }}>
         <div className="popupbg" />
         <div className="previewFrame">
           <video ref={videoRef} className="video" style={{ objectFit: 'contain', overflow: 'hidden', maxHeight: '81vh', maxWidth: '80vw' }} loop muted playsInline preload="auto">
-            <source src="" type="video/mp4"/>
+            <source src="https://www.dl.dropboxusercontent.com/s/ziy402vw9fnt783/ReshareHub1000bitrate.mp4?dl=0" type="video/mp4"/>
           </video>
         </div>
       </div>
-      <div
-        className="navButtonBlock"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+      <div className="navButtonBlock" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <span className="navButton">{label}</span>
         <span className="navButtonYear">{year}</span>
       </div>

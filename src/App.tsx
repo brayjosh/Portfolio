@@ -28,7 +28,7 @@ function App() {
                   label={item.label}
                   year={item.year}
                   onMouseEnter={() => setHoveredId(item.id)}
-                  onMouseLeave={() => {/*leave for testing*/}}
+                  onMouseLeave={() => setHoveredId(null)}
                 />
               ))}
           </div>

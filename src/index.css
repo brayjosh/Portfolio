@@ -75,6 +75,7 @@ a {
 }
 
 .popupbg {
+  display: none;
   position: fixed;
   left: 0%;
   top: 0%;
@@ -104,7 +105,6 @@ a {
   -webkit-box-align: center;
   align-items: center;
   transform: scale3d(1, 1, 1);
-  transition: transform 0.2s ease;
 }
 
 .navButtonBlock:hover {
@@ -117,7 +117,6 @@ a {
 
 .hidden {
   opacity: 0;
-  transition: opacity 0.2s ease;
 }
 
 .navButtonBlock .navButton {
@@ -167,7 +166,6 @@ a {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   line-height: 22px;
-  transition: opacity 0.2s ease;
 }
 
 .contentRightColumn {
@@ -219,6 +217,25 @@ a {
     width: auto;
     padding-right: 8px;
     padding-left: 8px;
+  }
+
+  .videoPreviewWrapper {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 3%;
+    /*z-index: 3;*/
+    padding-left: 0vw;
+  }
+
+  .previewFrame {
+    position: fixed;
+  }
+
+  .popupbg {
+    display: block;
+    z-index: -1;
   }
 
   .navButtonBlock:hover {
