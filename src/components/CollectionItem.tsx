@@ -1,35 +1,53 @@
+import { useRef, useState } from 'react'
+
 interface Props {
   label: string
   year: string
-  videoId: string
-  isHovered: boolean
   onMouseEnter: () => void
   onMouseLeave: () => void
 }
 
-export function CollectionItem({ label, year, videoId, isHovered, onMouseEnter, onMouseLeave }: Props) {
-  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&playlist=${videoId}`
+export function CollectionItem({ label, year, onMouseEnter, onMouseLeave }: Props) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleMouseEnter = () => {
+    setIsHovered(true)
+    videoRef.current?.play()
+    onMouseEnter()
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovered(false)
+    const video = videoRef.current
+    if (video) {
+      video.pause()
+      video.currentTime = 0
+    }
+    onMouseLeave()
+  }
 
   return (
-    <>
+    <div className="collectionItem" role="listitem">
       <div
-        className="collectionItem"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
+        className="videoPreviewWrapper container"
+        style={{ display: 'flex', opacity: isHovered ? 1 : 0, transition: 'opacity 0.2s ease' }}
       >
-        <span className="collectionItemLabel">{label}</span>
-        <span className="collectionItemYear">{year}</span>
-      </div>
-      {isHovered && (
-        <div className="videoModal">
-          <iframe
-            src={embedUrl}
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-            title={label}
-          />
+        <div className="popupbg" />
+        <div className="previewFrame">
+          <video ref={videoRef} className="video" style={{ objectFit: 'contain', overflow: 'hidden', maxHeight: '81vh', maxWidth: '80vw' }} loop muted playsInline preload="auto">
+            <source src="" type="video/mp4"/>
+          </video>
         </div>
-      )}
-    </>
+      </div>
+      <div
+        className="navButtonBlock"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <span className="navButton">{label}</span>
+        <span className="navButtonYear">{year}</span>
+      </div>
+    </div>
   )
 }

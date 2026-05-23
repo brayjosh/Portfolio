@@ -10,7 +10,7 @@ interface CollectionItemData {
 }
 
 const items: CollectionItemData[] = [
-  { id: 1, label: 'UK Police - Custom Connector', year: '2026', videoId: '' },
+  { id: 1, label: 'UK Police - Custom Connector', year: '2026', videoId: 'MFRV32xG6RE' },
   { id: 2, label: 'Traffic Light - PCF', year: '2026', videoId: '' }
 ]
 
@@ -18,20 +18,20 @@ function App() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
 
   return <div className="homeMainColumn">
-    <div className="homeLeftColumn" style={{ width: '41.66666667%' }}>
+    <div className="homeLeftColumn">
       <div className="stickyMenu">
-        <div className="collectionListWrapper">
-          {items.map((item) => (
-            <CollectionItem
-              key={item.id}
-              label={item.label}
-              year={item.year}
-              videoId={item.videoId}
-              isHovered={hoveredId === item.id}
-              onMouseEnter={() => setHoveredId(item.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            />
-          ))}
+        <div>
+          <div className="collectionList" role="list">
+              {items.map((item) => (
+                <CollectionItem
+                  key={item.id}
+                  label={item.label}
+                  year={item.year}
+                  onMouseEnter={() => setHoveredId(item.id)}
+                  onMouseLeave={() => {/*leave for testing*/}}
+                />
+              ))}
+          </div>
         </div>
       </div>
     </div>
