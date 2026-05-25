@@ -23,13 +23,7 @@ function App() {
         <div>
           <div className="collectionList" role="list">
               {items.map((item) => (
-                <CollectionItem
-                  key={item.id}
-                  label={item.label}
-                  year={item.year}
-                  onMouseEnter={() => setHoveredId(item.id)}
-                  onMouseLeave={() => setHoveredId(null)}
-                />
+                <CollectionItem key={item.id} label={item.label} year={item.year} onMouseEnter={() => setHoveredId(item.id)} onMouseLeave={() => setHoveredId(null)}/>
               ))}
           </div>
         </div>
