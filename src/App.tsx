@@ -29,7 +29,7 @@ function App() {
         </div>
       </div>
     </div>
-    <div className="homeRightColumn">
+    <div className="homeRightColumn widthColumnMedium">
       <div className={`innerRightColumn${hoveredId !== null ? ' hidden' : ''}`}>
         <div className="contentRightColumn">
           <div className="textBlock">
