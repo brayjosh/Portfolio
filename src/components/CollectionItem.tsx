@@ -42,7 +42,7 @@ export function CollectionItem({ label, year, onMouseEnter, onMouseLeave }: Prop
 
   const trackingX = (mousePos.x / window.innerWidth - 0.5) * 20
   const trackingY = (mousePos.y / window.innerHeight - 0.5) * 10
-  const mouseTransform = !isTablet? `translate3d(${trackingX + 10}vw, ${trackingY}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)` : undefined
+  const mouseTransform = !isTablet? `translate3d(${trackingX + 7}vw, ${trackingY}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)` : undefined
 
   const showVideo = () => {
     setIsHovered(true)
