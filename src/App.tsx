@@ -4,14 +4,17 @@ import { CollectionItem } from './components/CollectionItem'
 
 interface CollectionItemData {
   id: number
+  logoSrc: string
+  companyName: string
+  videoSrc: string
   label: string
   year: string
-  videoId: string
 }
 
 const items: CollectionItemData[] = [
-  { id: 1, label: 'UK Police - Custom Connector', year: '2026', videoId: 'MFRV32xG6RE' },
-  { id: 2, label: 'Traffic Light - PCF', year: '2026', videoId: '' }
+  { id: 1, logoSrc: '/images/power-platform.svg', companyName: 'Power Platform', videoSrc: '/videos/custom-connector.mp4',label: 'Custom Connector', year: '2026' },
+  { id: 2, logoSrc: '/images/power-apps.svg', companyName: 'Power Apps', videoSrc: '/videos/pcf.mp4', label: 'PCF', year: '2026' }/*,*/
+  // { id: 3, logoSrc: '/images/sharepoint.svg', companyName: 'SharePoint', videoSrc: '', label: 'SPFx', year: '2025' }
 ]
 
 function App() {
@@ -23,7 +26,7 @@ function App() {
         <div>
           <div className="collectionList" role="list">
               {items.map((item) => (
-                <CollectionItem key={item.id} label={item.label} year={item.year} onMouseEnter={() => setHoveredId(item.id)} onMouseLeave={() => setHoveredId(null)}/>
+                <CollectionItem key={item.id} logoSrc={item.logoSrc} companyName={item.companyName} videoSrc={item.videoSrc}  label={item.label} year={item.year} onMouseEnter={() => setHoveredId(item.id)} onMouseLeave={() => setHoveredId(null)}/>
               ))}
           </div>
         </div>
