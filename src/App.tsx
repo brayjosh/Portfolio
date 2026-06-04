@@ -26,7 +26,7 @@ function App() {
         <div>
           <div className="collectionList" role="list">
               {items.map((item) => (
-                <CollectionItem key={item.id} logoSrc={item.logoSrc} companyName={item.companyName} videoSrc={item.videoSrc}  label={item.label} year={item.year} onMouseEnter={() => setHoveredId(item.id)} onMouseLeave={() => setHoveredId(null)}/>
+                <CollectionItem key={item.id} logoSrc={item.logoSrc} companyName={item.companyName} videoSrc={item.videoSrc}  label={item.label} year={item.year} hideNavButtons={hoveredId !== null} onMouseEnter={() => setHoveredId(item.id)} onMouseLeave={() => setHoveredId(null)}/>
               ))}
           </div>
         </div>
@@ -49,7 +49,7 @@ function App() {
           <a href="" target="_blank">About</a>
           <a href="mailto:jborsahy@computacenter.com">Email</a>
           <a href="https://www.linkedin.com/in/brayjosh" target="_blank">LinkedIn</a>
-          <a href="https://www.youtube.com/@joshua-bray" target="_blank">YouTube</a>
+          <a href="https://www.youtube.com/@brayjosh" target="_blank">YouTube</a>
         </div>
       </div>
     </div>

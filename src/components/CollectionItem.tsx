@@ -6,11 +6,12 @@ interface Props {
   videoSrc: string
   label: string
   year: string
+  hideNavButtons: boolean
   onMouseEnter: () => void
   onMouseLeave: () => void
 }
 
-export function CollectionItem({ logoSrc, companyName, videoSrc, label, year, onMouseEnter, onMouseLeave }: Props) {
+export function CollectionItem({ logoSrc, companyName, videoSrc, label, year, hideNavButtons, onMouseEnter, onMouseLeave }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isHovered, setIsHovered] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
@@ -90,7 +91,7 @@ export function CollectionItem({ logoSrc, companyName, videoSrc, label, year, on
           </video>
         </div>
       </div>
-      <div className="navButtonBlock" onMouseEnter={!isMobile ? showVideo : undefined} onMouseLeave={!isMobile ? hideVideo : undefined} onClick={isMobile ? handleClick : undefined}>
+      <div className={`navButtonBlock${hideNavButtons && !isMobile ? ' hidden' : ''}`} onMouseEnter={!isMobile ? showVideo : undefined} onMouseLeave={!isMobile ? hideVideo : undefined} onClick={isMobile ? handleClick : undefined} style={{ transition: 'opacity 0.2s ease' }}>
         <span className="navButton labelAndYear">{label}</span>
         <span className="navButtonYear labelAndYear">{year}</span>
       </div>
