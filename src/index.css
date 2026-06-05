@@ -231,7 +231,7 @@ a {
   display: flex;
 }
 
-@media screen and (max-width: 991px) {
+/* @media screen and (max-width: 991px) {
   .linkForProject {
     left: 25%;
   }
@@ -247,9 +247,9 @@ a {
   .videoPreviewWrapper {
     padding-left: 25vw;
   }
-}
+} */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .homeMainColumn {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;

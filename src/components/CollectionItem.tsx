@@ -17,6 +17,7 @@ export function CollectionItem({ logoSrc, companyName, videoSrc, label, year, hi
   const [isMobile, setIsMobile] = useState(false)
   const [isTablet, setIsTablet] = useState(false)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const isMobileLike = isMobile || isTablet
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 767px)')
@@ -46,7 +47,7 @@ export function CollectionItem({ logoSrc, companyName, videoSrc, label, year, hi
 
   const trackingX = (mousePos.x / window.innerWidth - 0.5) * 20
   const trackingY = (mousePos.y / window.innerHeight - 0.5) * 10
-  const mouseTransform = !isTablet? `translate3d(${trackingX + 7}vw, ${trackingY}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)` : undefined
+  const mouseTransform = !isMobileLike ? `translate3d(${trackingX + 7}vw, ${trackingY}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)` : undefined
 
   const showVideo = () => {
     setIsHovered(true)
@@ -91,7 +92,7 @@ export function CollectionItem({ logoSrc, companyName, videoSrc, label, year, hi
           </video>
         </div>
       </div>
-      <div className={`navButtonBlock${hideNavButtons && !isMobile ? ' hidden' : ''}`} onMouseEnter={!isMobile ? showVideo : undefined} onMouseLeave={!isMobile ? hideVideo : undefined} onClick={isMobile ? handleClick : undefined} style={{ transition: 'opacity 0.2s ease' }}>
+      <div className={`navButtonBlock${hideNavButtons && !isMobileLike ? ' hidden' : ''}`} onMouseEnter={!isMobileLike ? showVideo : undefined} onMouseLeave={!isMobileLike ? hideVideo : undefined} onClick={isMobileLike ? handleClick : undefined} style={{ transition: 'opacity 0.2s ease' }}>
         <span className="navButton labelAndYear">{label}</span>
         <span className="navButtonYear labelAndYear">{year}</span>
       </div>
