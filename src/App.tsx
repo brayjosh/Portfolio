@@ -13,8 +13,8 @@ interface CollectionItemData {
 
 const items: CollectionItemData[] = [
   { id: 1, logoSrc: '/images/power-platform.svg', companyName: 'Power Platform', videoSrc: '/videos/custom-connector.mp4',label: 'Custom Connector', year: '2026' },
-  { id: 2, logoSrc: '/images/power-apps.svg', companyName: 'Power Apps', videoSrc: '/videos/pcf.mp4', label: 'PCF', year: '2026' }/*,*/
-  // { id: 3, logoSrc: '/images/sharepoint.svg', companyName: 'SharePoint', videoSrc: '', label: 'SPFx', year: '2025' }
+  { id: 2, logoSrc: '/images/power-apps.svg', companyName: 'Power Apps', videoSrc: '/videos/pcf.mp4', label: 'PCF', year: '2026' },
+  { id: 3, logoSrc: '/images/power-apps.svg', companyName: 'Power Apps', videoSrc: '/videos/colour-canvas-game.mp4', label: 'Power App', year: '2026' }
 ]
 
 function App() {
