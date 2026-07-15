@@ -2,16 +2,16 @@ import { useRef, useState, useEffect } from 'react'
 
 interface Props {
   logoSrc: string
-  companyName: string
+  technology: string
   videoSrc: string
   label: string
-  year: string
+  contribution: string
   hideNavButtons: boolean
   onMouseEnter: () => void
   onMouseLeave: () => void
 }
 
-export function CollectionItem({ logoSrc, companyName, videoSrc, label, year, hideNavButtons, onMouseEnter, onMouseLeave }: Props) {
+export function CollectionItem({ logoSrc, technology, videoSrc, label, contribution, hideNavButtons, onMouseEnter, onMouseLeave }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isHovered, setIsHovered] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
@@ -79,7 +79,7 @@ export function CollectionItem({ logoSrc, companyName, videoSrc, label, year, hi
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', paddingBottom: '24px' }}>
           <img src={`${logoSrc}`} style={{ height: '16px' }} />
           <text style={{ fontFamily: 'Segoe UI', opacity: 1, paddingLeft: '8px', fontSize: '14px' }}>
-            {companyName}
+            {technology}
           </text>
         </div>
       </div>
@@ -93,8 +93,8 @@ export function CollectionItem({ logoSrc, companyName, videoSrc, label, year, hi
         </div>
       </div>
       <div className={`navButtonBlock${hideNavButtons && !isMobileLike ? ' hidden' : ''}`} onMouseEnter={!isMobileLike ? showVideo : undefined} onMouseLeave={!isMobileLike ? hideVideo : undefined} onClick={isMobileLike ? handleClick : undefined} style={{ transition: 'opacity 0.2s ease' }}>
-        <span className="navButton labelAndYear">{label}</span>
-        <span className="navButtonYear labelAndYear">{year}</span>
+        <span className="navButton labelAndCon">{label}</span>
+        <span className="navButtonContribution labelAndCon contributionLabel">{contribution}</span>
       </div>
     </div>
   )

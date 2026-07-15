@@ -168,7 +168,7 @@ a {
   cursor: default;
 }
 
-.navButtonYear {
+.navButtonContribution {
   padding-right: 16px;
   padding-left: 16px;
   opacity: 0.69;
@@ -177,6 +177,13 @@ a {
   line-height: 36px;
   font-weight: 400;
 }
+
+.contributionLabel {
+    font-size: small;
+    padding-top: 16px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
 
 
 .homeRightColumn {
@@ -319,7 +326,7 @@ a {
     transform: scale3d(1.02, 1.02, 1);
   }
 
-  .labelAndYear {
+  .labelAndCon {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
