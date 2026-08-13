@@ -17,7 +17,8 @@ const items: CollectionItemData[] = [
   { id: 3, logoSrc: '/images/power-apps.svg', technology: 'Power Apps', videoSrc: '/videos/pcf.mp4', label: 'Traffic Light', contribution: 'pcf.gallery' },
   { id: 4, logoSrc: '/images/power-apps.svg', technology: 'Power Apps', videoSrc: '/videos/colour-canvas-game.mp4', label: 'Colour', contribution: 'pnp/powerplatform-samples' },
   { id: 5, logoSrc: '/images/sharepoint.svg', technology: 'SharePoint Online', videoSrc: '/videos/spfx.mp4', label: 'Power Platform Environments', contribution: 'pnp/sp-dev-fx-webparts' },
-  { id: 1, logoSrc: '/images/ai-foundry.svg', technology: 'Microsoft Foundry', videoSrc: '/videos/microsoft-foundry.mp4', label: 'Computing History Agent', contribution: 'MicrosoftLearning/ai-apps' }
+  { id: 6, logoSrc: '/images/ai-foundry.svg', technology: 'Microsoft Foundry', videoSrc: '/videos/microsoft-foundry.mp4', label: 'Computing History Agent', contribution: 'MicrosoftLearning/ai-apps' },
+  { id: 7, logoSrc: '/images/power-bi.svg', technology: 'Power BI', videoSrc: '/videos/uk-house-price.mp4', label: 'UK House Price', contribution: 'pnp/powerplatform-samples' }
 ]
 
 function App() {
