@@ -12,7 +12,7 @@ interface CollectionItemData {
 }
 
 const items: CollectionItemData[] = [
-  { id: 1, logoSrc: '/images/copilotstudio.svg', technology: 'Copilot Studio', videoSrc: '/videos/maker-support-assistant.mp4', label: 'Maker Support Assistant', contribution: 'pnp/powerplatform-samples' },
+  { id: 1, logoSrc: '/images/copilotstudio.svg', technology: 'Copilot Studio', videoSrc: '/videos/maker-support-assistant.mp4', label: 'Maker Support Assistant', contribution: 'pnp/copilot-pro-dev-samples' },
   { id: 2, logoSrc: '/images/power-platform.svg', technology: 'Power Platform', videoSrc: '/videos/custom-connector.mp4',label: 'Police UK', contribution: 'microsoft/PowerPlatformConnectors' },
   { id: 3, logoSrc: '/images/power-apps.svg', technology: 'Power Apps', videoSrc: '/videos/pcf.mp4', label: 'Traffic Light', contribution: 'pcf.gallery' },
   { id: 4, logoSrc: '/images/power-apps.svg', technology: 'Power Apps', videoSrc: '/videos/colour-canvas-game.mp4', label: 'Colour', contribution: 'pnp/powerplatform-samples' },
